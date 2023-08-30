@@ -1,0 +1,23 @@
+{
+  "name": "hounter",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "babel": "babel --watch js --out-dir dist/js --source-maps",
+    "sass": "sass --watch sass/main.scss:dist/css/main.css --style compressed",
+    "dev": "npm run babel & npm run sass & vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "stop-all": "killall node"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "sass": "^1.65.1",
+    "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}
