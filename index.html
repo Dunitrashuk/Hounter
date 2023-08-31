@@ -13,6 +13,86 @@
     <title>Hounter</title>
   </head>
   <body>
-    <div></div>
+    <header class="header">
+      <div class="header__content">
+        <img src="./assets/svgs/Logo.svg" alt="Logo" class="header__logo" />
+        <nav class="header__nav">
+          <a href="#" class="button button--white label-text-bold">About us</a>
+          <a href="#" class="button button--white label-text-bold">Article</a>
+          <a href="#" class="select-white label-text-bold">
+            <span class="label-text-bold">Property</span>
+            <svg>
+              <use href="./assets/svgs/sprite.svg#Arrow"></use>
+            </svg>
+            <ul class="select-white__dropdown">
+              <li class="select-white__dropdown__link">HTML</li>
+              <li class="select-white__dropdown__link">CSS</li>
+              <li class="select-white__dropdown__link">Javascript</li>
+              <li class="select-white__dropdown__link">React</li>
+            </ul>
+          </a>
+          <a href="#" class="button button--outline label-text-bold">Sign Up</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero__content">
+          <div class="hero__content__text">
+            <div class="hero__content__text__content">
+              <img
+                src="./assets/svgs/hero-blur.svg"
+                alt="hero blur"
+                class="hero__blur"
+              />
+              <h1 class="heading-1">
+                Find The Place To <br />
+                Live <span class="text-primary">Your Dreams</span><br />
+                Easily Here
+              </h1>
+              <p class="body-text-light text-grey-3">
+                Everything you need about finding your place to live will be
+                here, where it will be easier for you
+              </p>
+
+              <div class="input-complex">
+                <svg>
+                  <use href="./assets/svgs/sprite.svg#Location"></use>
+                </svg>
+                <input
+                  type="text"
+                  placeholder="Search for the location you want!"
+                />
+                <a href="#" class="button button--filled label-text-bold">
+                  Search
+                  <svg>
+                    <use href="./assets/svgs/sprite.svg#Arrow"></use>
+                  </svg>
+                </a>
+              </div>
+              <p class="body-text-light text-grey-2">Our Partnership</p>
+
+              <div class="hero__partners">
+                <img src="./assets/images/traveloka.png" alt="traveloka" />
+                <img src="./assets/images/tiket.png" alt="tiket" />
+                <img src="./assets/images/airbnb.png" alt="airbnb" />
+                <img src="./assets/images/tripadvisor.png" alt="tripadvisor" />
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__content__img-container">
+            <img
+              src="./assets/images/hero.png"
+              alt="hero image"
+              class="hero__content__img-container__img"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+    <script type="module" src="./js/main.js"></script>
   </body>
 </html>

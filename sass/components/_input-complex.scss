@@ -1,0 +1,32 @@
+.input-complex {
+  display: flex;
+  padding: 0.4rem 0.4rem 0.4rem 2.4rem;
+  border: solid 1px $color-grey-1;
+  border-radius: 2.8rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+
+  input {
+    font-family: inherit;
+    flex: 1;
+    border: none;
+    outline: none;
+  }
+
+  input::placeholder {
+    color: $color-grey-2;
+  }
+
+  svg {
+    height: 2.4rem;
+    width: 2.4rem;
+    fill: $color-secondary !important;
+  }
+
+  a {
+    svg {
+      fill: $color-white !important;
+    }
+  }
+}
