@@ -33,6 +33,9 @@
 
     &__img-container {
       position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
       flex: 1;
       border-bottom-left-radius: 8rem;
       overflow: hidden;
@@ -43,6 +46,17 @@
         width: 100%;
         z-index: -1;
         object-fit: cover;
+      }
+    }
+
+    &__cards-container {
+      margin-bottom: 4.8rem;
+      display: flex;
+      gap: 1.6rem;
+      overflow-x: scroll;
+
+      &::-webkit-scrollbar {
+        display: none;
       }
     }
   }

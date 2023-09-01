@@ -1,0 +1,39 @@
+.hero-card {
+  background-color: $color-white;
+  padding: 2.4rem;
+  width: fit-content;
+  border-radius: 3.2rem;
+  display: flex;
+  gap: 1.6rem;
+  flex-shrink: 0;
+
+  &:first-child {
+    margin-left: 4.8rem;
+  }
+
+  &:last-child {
+    margin-right: 4.8rem;
+  }
+
+  &__images-container {
+    display: flex;
+
+    &__img {
+      height: 5.6rem;
+      width: 5.6rem;
+      border-radius: 100%;
+      outline: solid 5px $color-white;
+      object-fit: cover;
+
+      &:not(:first-child) {
+        margin-left: -2.4rem;
+      }
+    }
+  }
+
+  &__text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
