@@ -9,8 +9,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2.4rem;
+    gap: 1.1rem;
     cursor: pointer;
+    border: none;
+    background-color: transparent;
   }
 
   &--white {
@@ -32,7 +34,7 @@
     &,
     &:link,
     &:visited {
-      border: solid 1px $color-primary-dark;
+      outline: solid 1px $color-primary-dark;
       padding: 1.2rem 2.4rem;
       color: $color-primary-dark;
     }
@@ -54,5 +56,15 @@
     &:hover {
       background-color: $color-primary-dark;
     }
+  }
+}
+
+.active {
+  background-color: $color-primary-light;
+  color: $color-primary;
+  outline: none;
+
+  svg {
+    fill: $color-primary;
   }
 }

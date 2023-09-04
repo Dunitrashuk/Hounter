@@ -1,0 +1,43 @@
+.sticker {
+  width: fit-content;
+  height: 3.4rem;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: 3.2rem;
+
+  svg {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  &--popular {
+    background-color: $color-danger-light;
+    color: $color-danger;
+
+    svg {
+      fill: $color-danger;
+    }
+  }
+
+  &--new {
+    background-color: $color-info-light;
+    color: $color-info;
+
+    svg {
+      fill: $color-info;
+    }
+  }
+
+  &--best {
+    background-color: $color-primary-light;
+    color: $color-primary;
+
+    svg {
+      fill: $color-primary;
+    }
+  }
+}
