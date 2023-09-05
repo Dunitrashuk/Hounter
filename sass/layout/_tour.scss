@@ -1,0 +1,192 @@
+.tour {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40rem;
+
+  &__line {
+    margin: 3.8rem 0;
+    height: 2px;
+    width: 100%;
+    background-color: $color-grey-1;
+  }
+
+  &__content {
+    width: 144rem;
+    padding: 10rem 12.8rem;
+    display: flex;
+    gap: 12rem;
+    flex-wrap: wrap;
+
+    &__info {
+      flex: 1;
+
+      p {
+        width: 80%;
+      }
+    }
+
+    &__images {
+      //   background-color: aqua;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      flex: 1;
+      position: relative;
+
+      &__gallery {
+        display: flex;
+        align-items: flex-end;
+        gap: 1.2rem;
+        z-index: 2;
+        // background-color: aliceblue;
+
+        &--1 {
+          width: 29.6rem;
+          height: 16.8rem;
+          border-radius: 0.8rem;
+          overflow: hidden;
+
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition: all 0.2s;
+          }
+
+          &:hover img {
+            transform: scale(1.05);
+          }
+        }
+
+        &--2 {
+          width: 9.6rem;
+          height: 8rem;
+          border-radius: 0.8rem;
+          overflow: hidden;
+          transition: all 0.2s;
+
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition: all 0.2s;
+          }
+
+          &:hover img {
+            transform: scale(1.05);
+          }
+        }
+      }
+
+      & > img {
+        position: absolute;
+        top: -30rem;
+        right: -35rem;
+        z-index: -2;
+      }
+
+      &__main-img {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        height: 90%;
+        top: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        overflow: hidden;
+
+        img {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          z-index: -1;
+          transition: all 0.6s;
+        }
+
+        svg {
+          position: absolute;
+          height: 4.8rem;
+          width: 4.8rem;
+          transition: all 0.2s;
+        }
+
+        &:hover img {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  &__house-detail-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin-top: 2.4rem;
+    gap: 2rem 0;
+
+    &__item {
+      display: flex;
+      align-items: center;
+      gap: 2.4rem;
+
+      color: $color-grey-3;
+      svg {
+        height: 3.2rem;
+        width: 3.2rem;
+        fill: $color-grey-3;
+      }
+    }
+  }
+
+  &__contact {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    button svg {
+      height: 2.4rem;
+      width: 2.4rem;
+      fill: $color-white;
+    }
+
+    button {
+      font-family: "Lexend", sans-serif;
+    }
+
+    &__user-container {
+      display: flex;
+      gap: 1.6rem;
+
+      &__img {
+        height: 5.6rem;
+        width: 5.6rem;
+        border-radius: 50%;
+        overflow: hidden;
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.5rem;
+
+        p {
+          width: max-content;
+        }
+      }
+    }
+  }
+}
