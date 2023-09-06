@@ -1,0 +1,75 @@
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 10rem;
+
+  &__cards {
+    display: flex;
+    gap: 3.2rem;
+    margin-top: 4rem;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    width: 100%;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__review {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__user-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.6rem;
+
+      &__img {
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+        overflow: hidden;
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    &__rating {
+      display: flex;
+      gap: 1.7rem;
+
+      svg {
+        height: 2.4rem;
+        width: 2.4rem;
+        fill: $color-secondary;
+      }
+    }
+  }
+
+  &__bullets {
+    display: flex;
+    gap: 1.6rem;
+
+    &__bullet {
+      cursor: pointer;
+      height: 0.8rem;
+      width: 0.8rem;
+      border-radius: 50%;
+      background-color: $color-grey-1;
+    }
+  }
+}
+
+.active-bullet {
+  background-color: $color-grey-3;
+}
