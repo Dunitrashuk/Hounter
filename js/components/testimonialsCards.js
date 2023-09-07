@@ -159,8 +159,8 @@ export default function testimonialsCards() {
   function scrollToCard(card) {
     card.scrollIntoView({
       behavior: "smooth",
+      block: "center",
       inline: "center",
-      block: "start",
     });
   }
 
@@ -191,10 +191,9 @@ export default function testimonialsCards() {
 
   bulletsEl.forEach((bullet, idx) => {
     bullet.addEventListener("click", (e) => {
-      const cardsEl = document.querySelectorAll(".testimonials-card");
       const card = cardsEl[idx];
-      changeBullet(idx);
       scrollToCard(card);
+      changeBullet(idx);
     });
   });
 }
