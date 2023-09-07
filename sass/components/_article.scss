@@ -1,0 +1,19 @@
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: left;
+
+  &__img-container {
+    height: 28rem;
+    width: 58rem;
+    border-radius: 1.6rem;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
