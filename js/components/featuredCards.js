@@ -2,11 +2,11 @@ export default function featuredCards() {
   const featuredButtons = document.querySelectorAll(".featured-button");
   const container = document.querySelector(".featured__cards");
   const leftButton = document.querySelector(
-    ".featured__arrow-buttons-container__left"
-  );
+    ".featured__arrow-buttons-container"
+  ).firstElementChild;
   const rightButton = document.querySelector(
-    ".featured__arrow-buttons-container__right"
-  );
+    ".featured__arrow-buttons-container"
+  ).lastElementChild;
 
   const houses = [
     {
@@ -168,10 +168,40 @@ export default function featuredCards() {
     });
   }
 
-  function filterHouses(houses, type) {
-    let filteredHouses = houses.filter((house) => house.propertyType === type);
-    container.innerHTML = "";
-    generateMarkup(filteredHouses);
+  function filterHouses(houses, type = undefined) {
+    if (type) {
+      let filteredHouses = houses.filter(
+        (house) => house.propertyType === type
+      );
+      container.innerHTML = "";
+      generateMarkup(filteredHouses);
+    } else {
+      container.innerHTML = "";
+      generateMarkup(houses);
+    }
+  }
+
+  function styleArrows() {
+    const reachedLeft = container.scrollLeft === 0;
+    const reachedRight =
+      window.innerWidth + container.scrollLeft >= container.scrollWidth;
+
+    if (reachedLeft && reachedRight) {
+      leftButton.classList.remove("active-button");
+      rightButton.classList.remove("active-button");
+      return;
+    }
+
+    if (reachedLeft) {
+      leftButton.classList.remove("active-button");
+      rightButton.classList.add("active-button");
+    } else if (reachedRight) {
+      rightButton.classList.remove("active-button");
+      leftButton.classList.add("active-button");
+    } else {
+      leftButton.classList.add("active-button");
+      rightButton.classList.add("active-button");
+    }
   }
 
   //EVENTS
@@ -181,13 +211,17 @@ export default function featuredCards() {
       const type = button.lastElementChild.textContent;
 
       featuredButtons.forEach((currButton) => {
-        currButton.classList.remove("active");
+        if (button !== currButton) currButton.classList.remove("active");
       });
 
-      button.classList.add("active");
+      button.classList.toggle("active");
+      if (button.classList.contains("active")) {
+        filterHouses(houses, type);
+      } else {
+        filterHouses(houses);
+      }
 
-      //filter cards
-      filterHouses(houses, type);
+      styleArrows();
     });
   });
 
@@ -197,6 +231,10 @@ export default function featuredCards() {
 
   leftButton.addEventListener("click", (e) => {
     container.scrollBy(-408, 0);
+  });
+
+  container.addEventListener("scroll", (e) => {
+    styleArrows();
   });
 
   generateMarkup(houses);
