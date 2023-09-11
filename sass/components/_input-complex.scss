@@ -29,4 +29,12 @@
       fill: $color-white !important;
     }
   }
+
+  &--subscribe {
+    width: 100%;
+    background-color: $color-white;
+    svg {
+      fill: $color-info !important;
+    }
+  }
 }
