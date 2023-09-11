@@ -34,6 +34,18 @@ export default function featuredCards() {
       type: "new",
       propertyType: "House",
     },
+    {
+      image: "./assets/images/house-2.jpg",
+      title: "Woodlandside",
+      price: "$ 20.000.000",
+      user: {
+        avatar: "../../assets/images/user-6.jpg",
+        name: "Robert Fox",
+        location: "Dr. San Jose, South Dakota",
+      },
+      type: "new",
+      propertyType: "House",
+    },
 
     {
       image: "./assets/images/house-3.jpg",
@@ -184,7 +196,7 @@ export default function featuredCards() {
   function styleArrows() {
     const reachedLeft = container.scrollLeft === 0;
     const reachedRight =
-      window.innerWidth + container.scrollLeft >= container.scrollWidth;
+      window.innerWidth + container.scrollLeft + 1 >= container.scrollWidth;
 
     if (reachedLeft && reachedRight) {
       leftButton.classList.remove("active-button");
