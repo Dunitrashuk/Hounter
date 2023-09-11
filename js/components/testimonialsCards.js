@@ -1,8 +1,4 @@
 export default function testimonialsCards() {
-  //SELECTORS
-  const cardsContainer = document.querySelector(".testimonials__cards");
-  const bulletsContainer = document.querySelector(".testimonials__bullets");
-
   const cards = [
     {
       image: "./assets/images/house-5.jpg",
@@ -82,6 +78,19 @@ export default function testimonialsCards() {
     },
   ];
 
+  //SELECTORS
+  const cardsContainer = document.querySelector(".testimonials__cards");
+  const bulletsContainer = document.querySelector(".testimonials__bullets");
+
+  generateCardMarkup(cards);
+  allignCards();
+  generateBulletsMarkup(cards);
+  onScrollStop(changeBulletOnScroll);
+
+  const cardsEl = document.querySelectorAll(".testimonials-card");
+  const bulletsEl = document.querySelectorAll(".testimonials__bullets__bullet");
+
+  //FUNCTIONS
   function allignCards() {
     const windowWidth = window.innerWidth;
     const firstCard = cardsContainer.firstElementChild;
@@ -139,6 +148,7 @@ export default function testimonialsCards() {
           `;
       renderCardMarkup(template);
     });
+    cardsContainer.scrollTo(0, 0);
   }
 
   function renderBulletMarkup(markup) {
@@ -158,8 +168,7 @@ export default function testimonialsCards() {
 
   function scrollToCard(card) {
     card.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
+      block: "nearest",
       inline: "center",
     });
   }
@@ -171,21 +180,37 @@ export default function testimonialsCards() {
     });
   }
 
-  generateCardMarkup(cards);
-  allignCards();
-  generateBulletsMarkup(cards);
+  function changeBulletOnScroll() {
+    const marginLeft = Math.floor(
+      parseInt(window.getComputedStyle(cardsEl[0]).marginLeft)
+    );
 
-  const cardsEl = document.querySelectorAll(".testimonials-card");
-  const bulletsEl = document.querySelectorAll(".testimonials__bullets__bullet");
+    cardsEl.forEach((card, idx) => {
+      let cardCenter = Math.floor(card.getBoundingClientRect().x);
 
-  //TO DO: Bug,, third card glitch when tour-blur is in markup, idk why!!!
+      if (marginLeft >= cardCenter - card.offsetWidth / 2) changeBullet(idx);
+    });
+  }
+
+  function onScrollStop(callback) {
+    let isScrolling;
+    cardsContainer.addEventListener(
+      "scroll",
+      (e) => {
+        clearTimeout(isScrolling);
+        isScrolling = setTimeout(() => {
+          callback();
+        }, 50);
+      },
+      false
+    );
+  }
 
   //EVENTS
-  cardsEl.forEach((card, idx) => {
+  cardsEl.forEach((card) => {
     card.addEventListener("click", (e) => {
       const currCard = e.target.closest(".testimonials-card");
       scrollToCard(currCard);
-      changeBullet(idx);
     });
   });
 

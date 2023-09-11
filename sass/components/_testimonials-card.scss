@@ -8,6 +8,7 @@
   padding-bottom: 5rem;
   flex-shrink: 0;
   cursor: pointer;
+  scroll-snap-align: center;
 
   &__img-container {
     position: absolute;

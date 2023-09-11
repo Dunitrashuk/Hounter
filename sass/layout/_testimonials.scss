@@ -10,9 +10,11 @@
     display: flex;
     gap: 3.2rem;
     margin-top: 4rem;
-    overflow-x: hidden;
+    overflow-x: scroll;
     scroll-behavior: smooth;
     width: 100%;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
 
     &::-webkit-scrollbar {
       display: none;
