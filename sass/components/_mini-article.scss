@@ -2,6 +2,9 @@
   display: flex;
   gap: 3.2rem;
   text-align: left;
+  border-radius: 1.6rem;
+  cursor: pointer;
+  transition: all 0.2s;
 
   &__img-container {
     height: 14.8rem;
@@ -23,7 +26,7 @@
     width: max-content;
     display: flex;
     flex-direction: column;
-    gap: 1.6rem;
+    gap: 1.2rem;
 
     &__user {
       display: flex;
@@ -58,13 +61,22 @@
         width: 2.4rem;
         fill: $color-grey-2;
       }
-
-      &__text {
-      }
     }
   }
 
   h3 {
     width: 34.8rem;
+  }
+
+  &:hover {
+    // box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    transition: all 0.2s;
+
+    background: linear-gradient(
+      90deg,
+      rgba(18, 220, 136, 0.05) 35%,
+      rgba(18, 220, 136, 0.116) 81%,
+      rgba(0, 212, 255, 0.18923319327731096) 100%
+    );
   }
 }

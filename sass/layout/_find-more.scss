@@ -5,9 +5,9 @@
   justify-content: center;
   gap: 1.6rem;
   text-align: center;
-  margin-bottom: 30rem;
 
   &__articles-container {
+    position: relative;
     margin-top: 4.7rem;
     padding: 0 12.4rem;
     max-width: 144rem;
@@ -23,6 +23,13 @@
 
     &__main-article {
       flex: 1;
+    }
+
+    & > img {
+      position: absolute;
+      top: -40rem;
+      left: -25rem;
+      z-index: -1;
     }
   }
 }

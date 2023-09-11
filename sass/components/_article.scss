@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: 2rem;
   text-align: left;
+  animation: appearMain 0.5s;
 
   &__img-container {
     height: 28rem;
@@ -15,5 +16,16 @@
       width: 100%;
       object-fit: cover;
     }
+  }
+}
+
+@keyframes appearMain {
+  from {
+    transform: translateX(40rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
