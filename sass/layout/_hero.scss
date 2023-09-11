@@ -1,0 +1,76 @@
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  &__blur {
+    position: absolute;
+    top: -45rem;
+    left: -45rem;
+    z-index: -1;
+  }
+
+  &__content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    &__text {
+      padding: 18.2rem 12.4rem 10rem 12.4rem;
+      width: 50%;
+      flex-grow: 0;
+
+      &__content {
+        position: relative;
+        max-width: 47rem;
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 3.2rem;
+      }
+    }
+
+    &__img-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      flex: 1;
+      border-bottom-left-radius: 8rem;
+      overflow: hidden;
+
+      &__img {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        object-fit: cover;
+      }
+    }
+
+    &__cards-container {
+      margin-bottom: 4.8rem;
+      display: flex;
+      gap: 1.6rem;
+      overflow-x: scroll;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  &__partners {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3.2rem;
+
+    & > * {
+      margin-top: -2rem;
+      height: auto;
+      width: 8rem;
+    }
+  }
+}

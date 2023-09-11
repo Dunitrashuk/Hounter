@@ -1,0 +1,58 @@
+.select-white {
+  &,
+  &:link,
+  &:visited {
+    position: relative;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    text-decoration: none;
+    max-width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    border: solid 1px $color-white;
+    padding: 0.8rem 1.6rem;
+    background-color: rgba($color-white, 0.2);
+    color: $color-white;
+  }
+
+  &:hover svg {
+    transform: rotate(-90deg);
+  }
+
+  svg {
+    height: 1.6rem;
+    width: 1.6rem;
+    fill: $color-white;
+    transform: rotate(90deg);
+    transition: all 0.2s;
+  }
+
+  &__dropdown {
+    width: 102%;
+    display: none;
+    flex-direction: column;
+    gap: 0.8rem;
+    list-style: none;
+    background-color: rgba($color-white, 0.1);
+    border: solid 1px $color-white;
+    border-top: none;
+    border-radius: 1.6rem;
+    padding: 5rem 0.8rem 1.6rem 0.8rem;
+    position: absolute;
+    top: 0;
+    left: -1px;
+    color: $color-white;
+
+    li {
+      padding: 0.4rem 0.8rem;
+      border-radius: 2.8rem;
+    }
+
+    li:hover {
+      background-color: $color-primary;
+    }
+  }
+}

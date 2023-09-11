@@ -1,0 +1,59 @@
+.featured-card {
+  cursor: pointer;
+
+  &:first-child {
+    margin-left: 12.4rem;
+  }
+
+  &:last-child {
+    margin-right: 12.4rem;
+  }
+
+  &__img-container {
+    position: relative;
+    height: 38.2rem;
+    width: 37.6rem;
+    border-radius: 2.4rem;
+    overflow: hidden;
+    padding: 1.6rem;
+    display: flex;
+    align-items: flex-end;
+
+    img {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      transition: all 0.4s;
+    }
+  }
+
+  &:hover &__img-container img {
+    transform: scale(1.05);
+  }
+
+  &__text-container {
+    padding: 1rem;
+  }
+
+  &__user-container {
+    display: flex;
+    gap: 1.6rem;
+
+    &__img {
+      height: 4rem;
+      width: 4rem;
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

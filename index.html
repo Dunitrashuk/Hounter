@@ -10,9 +10,403 @@
       rel="stylesheet"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta http-equiv="Permissions-Policy" content="interest-cohort=()" /> -->
     <title>Hounter</title>
   </head>
   <body>
-    <div></div>
+    <header class="header">
+      <div class="header__content">
+        <img src="./assets/svgs/Logo.svg" alt="Logo" class="header__logo" />
+        <nav class="header__nav">
+          <a href="#" class="button button--white label-text-bold">About us</a>
+          <a href="#" class="button button--white label-text-bold">Article</a>
+          <a href="#" class="select-white label-text-bold">
+            <span class="label-text-bold">Property</span>
+            <svg>
+              <use href="./assets/svgs/sprite.svg#arrow"></use>
+            </svg>
+            <ul class="select-white__dropdown">
+              <li class="select-white__dropdown__link">HTML</li>
+              <li class="select-white__dropdown__link">CSS</li>
+              <li class="select-white__dropdown__link">Javascript</li>
+              <li class="select-white__dropdown__link">React</li>
+            </ul>
+          </a>
+          <a href="#" class="button button--outline label-text-bold">Sign Up</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero__content">
+          <div class="hero__content__text">
+            <div class="hero__content__text__content">
+              <img
+                src="./assets/svgs/hero-blur.svg"
+                alt="hero blur"
+                class="hero__blur"
+              />
+              <h1 class="heading-1">
+                Find The Place To <br />
+                Live <span class="text-primary">Your Dreams</span><br />
+                Easily Here
+              </h1>
+              <p class="body-text-light text-grey-3">
+                Everything you need about finding your place to live will be
+                here, where it will be easier for you
+              </p>
+
+              <div class="input-complex">
+                <svg>
+                  <use href="./assets/svgs/sprite.svg#location"></use>
+                </svg>
+                <input
+                  type="text"
+                  placeholder="Search for the location you want!"
+                />
+                <a href="#" class="button button--filled label-text-bold">
+                  Search
+                  <svg>
+                    <use href="./assets/svgs/sprite.svg#arrow"></use>
+                  </svg>
+                </a>
+              </div>
+              <p class="body-text-light text-grey-2">Our Partnership</p>
+
+              <div class="hero__partners">
+                <img src="./assets/images/traveloka.png" alt="traveloka" />
+                <img src="./assets/images/tiket.png" alt="tiket" />
+                <img src="./assets/images/airbnb.png" alt="airbnb" />
+                <img src="./assets/images/tripadvisor.png" alt="tripadvisor" />
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__content__img-container">
+            <img
+              src="./assets/images/hero.png"
+              alt="hero image"
+              class="hero__content__img-container__img"
+            />
+            <div class="hero__content__cards-container"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="featured">
+        <div class="featured__container">
+          <div class="featured__recommendation">
+            <div class="featured__line"></div>
+            <p class="label-text-regular text-color-secondary">
+              Our recommendation
+            </p>
+          </div>
+
+          <div class="featured__container__subcontainer">
+            <h2 class="heading-2">Featured House</h2>
+
+            <div class="featured__buttons-container">
+              <button
+                class="button button--outline label-text-bold featured-button"
+              >
+                <svg>
+                  <use href="./assets/svgs/sprite.svg#house"></use>
+                </svg>
+                <span>House</span>
+              </button>
+              <button
+                class="button button--outline label-text-bold featured-button"
+              >
+                <svg>
+                  <use href="./assets/svgs/sprite.svg#villa"></use>
+                </svg>
+                <span>Villa</span>
+              </button>
+              <button
+                class="button button--outline label-text-bold featured-button"
+              >
+                <svg>
+                  <use href="./assets/svgs/sprite.svg#apartment"></use>
+                </svg>
+                <span>Apartment</span>
+              </button>
+            </div>
+
+            <div class="featured__arrow-buttons-container">
+              <button class="featured__arrow-buttons-container__button">
+                <svg>
+                  <use href="./assets/svgs/sprite.svg#arrow-inverse"></use>
+                </svg>
+              </button>
+              <button
+                class="featured__arrow-buttons-container__button active-button"
+              >
+                <svg>
+                  <use href="./assets/svgs/sprite.svg#arrow"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="featured__cards"></div>
+      </section>
+
+      <section class="tour">
+        <div class="tour__content">
+          <div class="tour__content__info">
+            <div class="featured__recommendation">
+              <div class="featured__line"></div>
+              <p class="label-text-regular text-color-secondary">
+                Ready to Sell!
+              </p>
+            </div>
+
+            <h2 class="heading-2">Let's Tour And See Our Houses!</h2>
+            <p class="body-text-light text-grey-2 u-margin-top-small">
+              Houses recommended by our partners that have been curated to
+              become the home of your dreams!
+            </p>
+
+            <h3 class="body-text-bold u-margin-top-small-2">House Detail</h3>
+
+            <div class="tour__house-detail-container">
+              <div class="tour__house-detail-container__item">
+                <svg>
+                  <use href="./assets/svgs/sprite.svg#bed"></use>
+                </svg>
+                <p class="body-text-medium">4 Bedrooms</p>
+              </div>
+              <div class="tour__house-detail-container__item">
+                <svg>
+                  <use href="./assets/svgs/sprite.svg#bath"></use>
+                </svg>
+                <p class="body-text-medium">2 Bathrooms</p>
+              </div>
+              <div class="tour__house-detail-container__item">
+                <svg>
+                  <use href="./assets/svgs/sprite.svg#car"></use>
+                </svg>
+                <p class="body-text-medium">1 Carport</p>
+              </div>
+              <div class="tour__house-detail-container__item">
+                <svg>
+                  <use href="./assets/svgs/sprite.svg#stairs"></use>
+                </svg>
+                <p class="body-text-medium">2 Floors</p>
+              </div>
+            </div>
+
+            <div class="tour__line"></div>
+
+            <div class="tour__contact">
+              <div class="tour__contact__user-container">
+                <div class="tour__contact__user-container__img">
+                  <img src="./assets/images/user-5.jpg" alt="user 5" />
+                </div>
+
+                <div class="tour__contact__user-container__text">
+                  <h5 class="subtitle">Dianne Russell</h5>
+                  <p class="label-text-regular text-grey-2">
+                    Manchester, Kentucky
+                  </p>
+                </div>
+              </div>
+
+              <button class="button button--filled label-text-bold">
+                <svg>
+                  <use href="./assets/svgs/sprite.svg#call"></use>
+                </svg>
+                <span>Contact Now</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="tour__content__images">
+            <!-- <img src="./assets/svgs/tour-blur.svg" alt="tour blur" /> -->
+            <div class="tour__content__images__main-img">
+              <img src="./assets/images/house-8.jpg" alt="house 8" />
+              <svg>
+                <use href="./assets/svgs/sprite.svg#play"></use>
+              </svg>
+            </div>
+
+            <div class="tour__content__images__gallery">
+              <div class="tour__content__images__gallery--1">
+                <img src="./assets/images/detail-1.jpg" alt="detail 1" />
+              </div>
+              <div class="tour__content__images__gallery--2">
+                <img src="./assets/images/detail-2.jpg" alt="detail 1" />
+              </div>
+              <div class="tour__content__images__gallery--2">
+                <img src="./assets/images/detail-3.jpg" alt="detail 1" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="video-modal">
+          <iframe
+            width="520"
+            height="315"
+            src="https://www.youtube.com/embed/tgbNymZ7vqY"
+          >
+          </iframe>
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <div class="featured__line"></div>
+        <p class="label-text-regular text-color-secondary u-margin-top-small">
+          See Our Review
+        </p>
+
+        <h2 class="heading-2">What Our Users Say About Us</h2>
+
+        <div class="testimonials__cards"></div>
+        <div class="testimonials__bullets"></div>
+      </section>
+
+      <section class="find-more">
+        <div class="featured__line"></div>
+        <p class="label-text-regular text-color-secondary">
+          See tips and trick from our partnership
+        </p>
+
+        <h2 class="heading-2">
+          Find Out More About Selling And <br />
+          Buying Homes
+        </h2>
+        <button class="button button--filled label-text-medium">
+          <span>More Articles</span>
+        </button>
+
+        <div class="find-more__articles-container">
+          <div class="find-more__articles-container__articles">
+            <div class="mini-article">
+              <div class="mini-article__img-container">
+                <img src="./assets/images/house-1.jpg" alt="" />
+              </div>
+
+              <div class="mini-article__info">
+                <div class="mini-article__info__user">
+                  <div class="mini-article__info__user__img-container">
+                    <img src="./assets/images/user-1.jpg" alt="" />
+                  </div>
+
+                  <p class="label-text-regular">Dianne Russell</p>
+                </div>
+                <h3 class="subtitle">
+                  The things we need to check when we want to buy a house
+                </h3>
+
+                <div class="mini-article__info__date">
+                  <svg>
+                    <use href="./assets/svgs/sprite.svg#time"></use>
+                  </svg>
+
+                  <div class="mini-article__info__date__text">
+                    <p class="label-text-regular text-grey-2">
+                      2 min read | 24 Apr 2021
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mini-article">
+              <div class="mini-article__img-container">
+                <img src="./assets/images/house-1.jpg" alt="" />
+              </div>
+
+              <div class="mini-article__info">
+                <div class="mini-article__info__user">
+                  <div class="mini-article__info__user__img-container">
+                    <img src="./assets/images/user-1.jpg" alt="" />
+                  </div>
+
+                  <p class="label-text-regular">Dianne Russell</p>
+                </div>
+                <h3 class="subtitle">
+                  The things we need to check when we want to buy a house
+                </h3>
+
+                <div class="mini-article__info__date">
+                  <svg>
+                    <use href="./assets/svgs/sprite.svg#time"></use>
+                  </svg>
+
+                  <div class="mini-article__info__date__text">
+                    <p class="label-text-regular text-grey-2">
+                      2 min read | 24 Apr 2021
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mini-article">
+              <div class="mini-article__img-container">
+                <img src="./assets/images/house-1.jpg" alt="" />
+              </div>
+
+              <div class="mini-article__info">
+                <div class="mini-article__info__user">
+                  <div class="mini-article__info__user__img-container">
+                    <img src="./assets/images/user-1.jpg" alt="" />
+                  </div>
+
+                  <p class="label-text-regular">Dianne Russell</p>
+                </div>
+                <h3 class="subtitle">
+                  The things we need to check when we want to buy a house
+                </h3>
+
+                <div class="mini-article__info__date">
+                  <svg>
+                    <use href="./assets/svgs/sprite.svg#time"></use>
+                  </svg>
+
+                  <div class="mini-article__info__date__text">
+                    <p class="label-text-regular text-grey-2">
+                      2 min read | 24 Apr 2021
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="find-more__articles-container__main-article">
+            <div class="article">
+              <div class="article__img-container">
+                <img src="./assets/images/house-3.jpg" alt="" />
+              </div>
+
+              <div class="mini-article__info__user">
+                <div class="mini-article__info__user__img-container">
+                  <img src="./assets/images/user-1.jpg" alt="" />
+                </div>
+
+                <p class="label-text-regular">Dianne Russell</p>
+              </div>
+
+              <h3 class="heading-3">12 Things to know before buying a house</h3>
+              <p class="body-text-light text-grey-2">
+                Want to buy a house but are unsure about what we should know,
+                here I will try to explain what we should know and check when we
+                want to buy a house
+              </p>
+
+              <div class="mini-article__info__date__text">
+                <p class="label-text-regular text-grey-2">
+                  2 min read | 24 Apr 2021
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+    <script type="module" src="./js/main.js"></script>
   </body>
 </html>
