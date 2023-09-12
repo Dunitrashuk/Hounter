@@ -25,8 +25,8 @@
 
     &__img-1 {
       position: absolute;
-      height: 65%;
-      width: min-content;
+      height: 20.1rem;
+      width: 20.5rem;
       object-fit: contain;
       top: 3.8rem;
       left: 4rem;
@@ -35,8 +35,8 @@
 
     &__img-2 {
       position: absolute;
-      height: 65%;
-      width: min-content;
+      height: 19.4rem;
+      width: 19.7rem;
       object-fit: contain;
       top: 4.4rem;
       right: 7rem;
@@ -51,7 +51,6 @@
       text-align: center;
       max-width: 50rem;
       flex-shrink: 1;
-
 
       h2 {
         width: 90%;
