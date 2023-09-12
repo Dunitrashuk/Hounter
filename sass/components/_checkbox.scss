@@ -1,0 +1,40 @@
+.checkbox {
+  display: flex;
+  gap: 0.8rem;
+  margin-left: auto;
+
+  &__box {
+    height: 2.4rem;
+    width: 2.4rem;
+    background-color: $color-white;
+    border: 1px solid $color-primary;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &__sign {
+      height: 1.6rem;
+      width: 1.6rem;
+      opacity: 0;
+      stroke: $color-white;
+      fill: transparent;
+      transition: all 0.2s;
+    }
+  }
+
+  &__label {
+    cursor: pointer;
+    width: 46rem;
+  }
+}
+
+.checked {
+  background-color: $color-primary;
+
+  .checkbox__box__sign {
+    opacity: 1;
+  }
+}

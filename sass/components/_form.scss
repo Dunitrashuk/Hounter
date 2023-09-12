@@ -1,0 +1,58 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+  width: 100%;
+
+  &__field {
+    display: flex;
+    align-items: center;
+
+    &__message-label {
+      margin-top: 1.6rem;
+      align-self: start;
+    }
+
+    &__text-area-container {
+      position: relative;
+      width: 49.6rem;
+      height: 14.4rem;
+      margin-left: auto;
+
+      .counter {
+        position: absolute;
+        bottom: 1.6rem;
+        right: 2.4rem;
+        color: $color-grey-2;
+        transition: all 0.2s;
+      }
+    }
+
+    &__text-area {
+      font-family: inherit;
+      font-size: 1.4rem;
+      font-weight: 400;
+      height: 100%;
+      width: 100%;
+      border: 1px solid $color-grey-1;
+      border-radius: 2.8rem;
+      resize: none;
+      padding: 1.6rem 2.4rem;
+      outline: none;
+
+      &::placeholder {
+        color: $color-grey-2;
+      }
+    }
+  }
+
+  & .input-complex {
+    width: 49.6rem;
+    height: 5.6rem;
+    margin-left: auto;
+  }
+}
+
+.counter-transform {
+  transform: translateY(3.5rem);
+}
