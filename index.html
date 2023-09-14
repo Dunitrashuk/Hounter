@@ -224,7 +224,7 @@
           </div>
 
           <div class="tour__content__images">
-            <!-- <img src="./assets/svgs/tour-blur.svg" alt="tour blur" /> -->
+            <img src="./assets/svgs/tour-blur.svg" alt="tour blur" />
             <div class="tour__content__images__main-img">
               <img src="./assets/images/house-8.jpg" alt="house 8" />
               <svg>
@@ -277,7 +277,9 @@
           Find Out More About Selling And <br />
           Buying Homes
         </h2>
-        <button class="button button--filled label-text-medium find-more-button">
+        <button
+          class="button button--filled label-text-medium find-more-button"
+        >
           <span>More Articles</span>
         </button>
 
@@ -287,6 +289,150 @@
           <div class="find-more__articles-container__articles"></div>
 
           <div class="find-more__articles-container__main-article"></div>
+        </div>
+      </section>
+
+      <section class="subscribe">
+        <div class="subscribe__container">
+          <img
+            src="./assets/images/subscribe-bg.jpg"
+            alt="subscribe bg"
+            class="subscribe__container__bg"
+          />
+          <img
+            src="./assets/images/subscribe-1.png"
+            alt="subscribe-1"
+            class="subscribe__container__img-1"
+          />
+
+          <div class="subscribe__container__form">
+            <h2 class="heading-2">
+              Subscribe For More Info And Updates From Hounter
+            </h2>
+
+            <div class="input-complex input-complex--subscribe">
+              <svg>
+                <use href="./assets/svgs/sprite.svg#mail"></use>
+              </svg>
+              <input type="text" placeholder="Your email here" />
+              <button class="button button--filled label-text-bold">
+                Subscribe Now
+              </button>
+            </div>
+          </div>
+
+          <img
+            src="./assets/images/subscribe-2.png"
+            alt="subscribe-2"
+            class="subscribe__container__img-2"
+          />
+        </div>
+      </section>
+
+      <section class="form-section">
+        <div class="form-section__container">
+          <div class="form-section__container__info">
+            <h3 class="heading-3">Would you like to join?</h3>
+            <p class="body-text-light text-grey-3">
+              Quickly get three quotes from these local that people love in
+              online reviews.
+            </p>
+
+            <div class="form-section__br"></div>
+            <p class="body-text-light text-grey-3">
+              Pick the whose estimate suits you best.
+            </p>
+            <div class="form-section__br"></div>
+            <p class="body-text-light text-grey-3">
+              We then make sure the work i done to your complete satisfaction.
+            </p>
+            <img src="./assets/images/form-1.png" alt="form 1" />
+          </div>
+
+          <div class="form-section__container__form-container">
+            <form class="form">
+              <div class="form__field">
+                <label for="name" class="label-text-medium">Name</label>
+                <div class="input-complex">
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    name="name"
+                    id="name"
+                  />
+                </div>
+              </div>
+              <div class="form__field">
+                <label for="surname" class="label-text-medium">Surname</label>
+                <div class="input-complex">
+                  <input
+                    type="text"
+                    placeholder="Your Surname"
+                    name="surname"
+                    id="surname"
+                  />
+                </div>
+              </div>
+              <div class="form__field">
+                <label for="education" class="label-text-medium"
+                  >Education</label
+                >
+                <div class="input-select">
+                  <p class="label-text-medium">Select</p>
+                  <svg>
+                    <use href="./assets/svgs/sprite.svg#arrow"></use>
+                  </svg>
+
+                  <ul class="input-select__dropdown">
+                    <li class="dropdown__option">
+                      <p class="label-text-medium">Elementary School</p>
+                    </li>
+                    <li class="dropdown__option">
+                      <p class="label-text-medium">High School</p>
+                    </li>
+                    <li class="dropdown__option">
+                      <p class="label-text-medium">Beachelor's Degree</p>
+                    </li>
+                    <li class="dropdown__option">
+                      <p class="label-text-medium">Master's Degree</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="form__field">
+                <label
+                  for="message"
+                  class="label-text-medium form__field__message-label"
+                  >Message</label
+                >
+                <div class="form__field__text-area-container">
+                  <textarea
+                    name="message"
+                    cols="40"
+                    class="form__field__text-area"
+                    placeholder="Message"
+                    maxlength="500"
+                  ></textarea>
+                  <div class="counter label-text-regular-sm">0/500</div>
+                </div>
+              </div>
+
+              <div class="form__field">
+                <div class="checkbox">
+                  <div class="checkbox__box">
+                    <svg class="checkbox__box__sign">
+                      <use href="./assets/svgs/sprite.svg#check"></use>
+                    </svg>
+                  </div>
+                  <label class="label-text-regular text-grey-2 checkbox__label">
+                    I give consent to the processing of my personal data given
+                    in the contact form above under the terms and conditions of
+                    Grid Dynamics Privacy Policy.
+                  </label>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </section>
     </main>

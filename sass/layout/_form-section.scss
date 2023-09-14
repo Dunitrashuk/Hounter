@@ -1,0 +1,46 @@
+.form-section {
+  display: flex;
+  justify-content: center;
+  padding: 0 12.4rem 10rem 12.4rem;
+
+  &__container {
+    width: 119.2rem;
+    height: 60rem;
+    z-index: 10;
+    display: flex;
+    gap: 3.2rem;
+
+    &__info {
+      position: relative;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 2.8rem;
+      padding: 4rem;
+      max-width: 47.8rem;
+      border-radius: 0.8rem;
+      box-shadow: 0 0.8rem 3.2rem rgba(12, 21, 55, 0.09);
+
+      img {
+        position: absolute;
+        bottom: 0;
+        z-index: -1;
+      }
+    }
+
+    &__form-container {
+      flex: 1.5;
+      border-radius: 0.8rem;
+      box-shadow: 0 0.8rem 3.2rem rgba(12, 21, 55, 0.09);
+      padding: 4rem;
+    }
+  }
+
+  &__br {
+    height: 3px;
+    width: 4rem;
+    background-color: $color-primary;
+  }
+}

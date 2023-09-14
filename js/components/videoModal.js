@@ -13,6 +13,6 @@ export default function videoModal() {
 
   videoModal.addEventListener("click", (e) => {
     videoModal.classList.remove("open-modal");
-    document.querySelector("html").style.overflow = "visible";
+    document.querySelector("html").style.overflowY = "visible";
   });
 }
