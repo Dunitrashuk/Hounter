@@ -10,7 +10,6 @@
       rel="stylesheet"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <meta http-equiv="Permissions-Policy" content="interest-cohort=()" /> -->
     <title>Hounter</title>
   </head>
   <body>
@@ -436,7 +435,70 @@
         </div>
       </section>
     </main>
-    <footer></footer>
+    <footer class="footer">
+      <div class="footer__content">
+        <div class="footer__content__social">
+          <img src="./assets/svgs/Logo.svg" alt="Logo" class="header__logo" />
+          <p class="label-text-regular text-grey-3">
+            We provide information about properties such as houses, villas and
+            apartments to help people find their dream home
+          </p>
+          <div class="footer__content__social__links-container">
+            <svg>
+              <use href="./assets/svgs/sprite.svg#facebook"></use>
+            </svg>
+            <svg>
+              <use href="./assets/svgs/sprite.svg#telegram"></use>
+            </svg>
+            <svg>
+              <use href="./assets/svgs/sprite.svg#pinterest"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="footer__content__property">
+          <p class="subtitle">Property</p>
+          <a href="#" class="footer__link label-text-regular">House</a>
+          <a href="#" class="footer__link label-text-regular">Apartment</a>
+          <a href="#" class="footer__link label-text-regular">Villa</a>
+        </div>
+        <div class="footer__content__article">
+          <p class="subtitle">Article</p>
+          <a href="#" class="footer__link label-text-regular">New Article</a>
+          <a href="#" class="footer__link label-text-regular"
+            >Popular Articles</a
+          >
+          <a href="#" class="footer__link label-text-regular">Most Read</a>
+          <a href="#" class="footer__link label-text-regular">Tips & Tricks</a>
+        </div>
+        <div class="footer__content__contact">
+          <p class="subtitle">Contact</p>
+          <a href="#" class="footer__link label-text-regular"
+            >2464 Royal Ln. Mesa, New Jersey 45463</a
+          >
+          <a href="#" class="footer__link label-text-regular">(671) 555-0110</a>
+          <a href="#" class="footer__link label-text-regular"
+            >info@hounter.com</a
+          >
+        </div>
+        <div class="footer__blur-container">
+          <img
+            src="./assets/svgs/footer-blur.svg"
+            alt="footer blur"
+            class="footer__blur"
+          />
+        </div>
+      </div>
+    </footer>
+    <div class="cookies">
+      <svg class="cookies__cookie">
+        <use href="./assets/svgs/sprite.svg#cookie"></use>
+      </svg>
+      <p class="body-text-bold text-primary">We are using cookies</p>
+
+      <svg class="cookies__cross">
+        <use href="./assets/svgs/sprite.svg#cross"></use>
+      </svg>
+    </div>
     <script type="module" src="./js/main.js"></script>
   </body>
 </html>
