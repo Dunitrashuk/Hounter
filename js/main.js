@@ -7,6 +7,7 @@ import articles from "./components/articles";
 import inputSelect from "./components/inputSelect";
 import textArea from "./components/textArea";
 import checkbox from "./components/checkbox";
+import cookie from "./components/cookie";
 
 selectWhite();
 heroCards();
@@ -17,3 +18,4 @@ articles();
 inputSelect();
 textArea();
 checkbox();
+cookie();

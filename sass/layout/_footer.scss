@@ -1,0 +1,82 @@
+.footer {
+  display: flex;
+  justify-content: center;
+
+  &__content {
+    width: 144rem;
+    padding: 0 12.4rem;
+    display: flex;
+    padding-bottom: 11.7rem;
+
+    position: relative;
+
+    &__social {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+      width: 37.6rem;
+      margin-right: 13.7rem;
+
+      img {
+        width: 11.5rem;
+        height: 3.6rem;
+      }
+
+      &__links-container {
+        display: flex;
+        gap: 2.8rem;
+
+        svg {
+          height: 3.2rem;
+          width: 3.2rem;
+          fill: $color-black;
+          transition: all 0.2s;
+          cursor: pointer;
+
+          &:hover {
+            fill: $color-primary;
+          }
+        }
+      }
+    }
+
+    &__property {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      flex: 1;
+      width: min-content;
+    }
+
+    &__article {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      flex: 1;
+      width: min-content;
+    }
+
+    &__contact {
+      width: max-content;
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      flex: 1;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-grey-2;
+    width: max-content;
+  }
+
+  &__blur-container {
+    height: 50rem;
+    position: absolute;
+    right: -30rem;
+    bottom: 0;
+    overflow: hidden;
+    z-index: -1;
+  }
+}
