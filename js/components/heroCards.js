@@ -1,25 +1,18 @@
-export default function heroCards() {
-  const cards = [
-    {
-      images: [
-        "./assets/images/user-1.jpg",
-        "./assets/images/user-2.jpg",
-        "./assets/images/user-3.jpg",
-      ],
-      title: "1K+ People",
-      description: "Successfully Getting Home",
-    },
-    {
-      images: ["./assets/images/hero-card-house.jpg"],
-      title: "56 Houses",
-      description: "Sold Monthly",
-    },
-    {
-      images: ["./assets/images/user-4.jpg"],
-      title: "4K+",
-      description: "People Looking for New Homes",
-    },
-  ];
+export default async function heroCards() {
+  const cards = await fetchHeroCards();
+
+  async function fetchHeroCards() {
+    try {
+      const response = await fetch("http://localhost:3000/hero/heroCards"); // Replace with your API endpoint
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  }
 
   function renderMarkup(cardMarkup) {
     const container = document.querySelector(".hero__content__cards-container");
@@ -34,7 +27,7 @@ export default function heroCards() {
                   ${card.images.map((imageURL, idx) => {
                     return `
                     <img
-                    src="${imageURL}"
+                    src="http://127.0.0.1:8080/${imageURL}"
                     alt="card image ${idx}"
                     class="hero-card__images-container__img"
                   />
