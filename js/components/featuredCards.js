@@ -122,6 +122,7 @@ export default function featuredCards() {
   function renderMarkup(cardMarkup) {
     container.innerHTML += cardMarkup;
     allignCards();
+    addFavoriteButtonsHandlers();
   }
 
   function returnSVG(type) {
@@ -142,6 +143,12 @@ export default function featuredCards() {
       <div class="featured-card">
             <div class="featured-card__img-container">
               <img src="${card.image}" alt="house ${idx}">
+
+              <div class="heart-container">
+                <svg>
+                    <use href="./assets/svgs/sprite.svg#heart"></use>
+                </svg>
+              </div>
 
               <div class="sticker sticker--${card.type} label-text-medium">
                 <svg>
@@ -214,6 +221,16 @@ export default function featuredCards() {
       leftButton.classList.add("active-button");
       rightButton.classList.add("active-button");
     }
+  }
+
+  function addFavoriteButtonsHandlers() {
+    const favoriteButtons = document.querySelectorAll(".heart-container");
+    favoriteButtons.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        const buttonEl = e.target.closest(".heart-container");
+        buttonEl.classList.toggle("favorite-active");
+      });
+    });
   }
 
   //EVENTS
