@@ -1,4 +1,4 @@
-export default function articles() {
+export default async function articles() {
   //SELECTORS
   const articlesContainer = document.querySelector(
     ".find-more__articles-container__articles"
@@ -9,61 +9,38 @@ export default function articles() {
 
   const moreButton = document.querySelector(".find-more-button");
 
-  let articles = [
-    {
-      imageUrl: "./assets/images/house-9.jpg",
-      user: {
-        avatar: "./assets/images/user-3.jpg",
-        name: "Dianne Russell",
-      },
-      title: "The things we need to check when we want to buy a house",
-      description:
-        "Want to buy a house but are unsure about what we should know, here I will try to explain what we should know and check when we want to buy a house",
-      readTime: "4",
-      date: "25 Apr 2021",
-    },
-
-    {
-      imageUrl: "./assets/images/house-10.jpg",
-      user: {
-        avatar: "./assets/images/user-4.jpg",
-        name: "Courtney Henry",
-      },
-      title: "7 Ways to distinguish the quality of the house we want to buy",
-      description:
-        "Want to buy a house but are unsure about what we should know, here I will try to explain what we should know and check when we want to buy a house",
-      readTime: "6",
-      date: "22 Apr 2021",
-    },
-
-    {
-      imageUrl: "./assets/images/house-7.jpg",
-      user: {
-        avatar: "./assets/images/user-5.jpg",
-        name: "Darlene Robertson",
-      },
-      title: "The best way to know the quality of the house we want to buy",
-      description:
-        "Want to buy a house but are unsure about what we should know, here I will try to explain what we should know and check when we want to buy a house",
-      readTime: "2",
-      date: "20 Mar 2021",
-    },
-  ];
-
-  let mainArticle = {
-    imageUrl: "./assets/images/hero-card-house.jpg",
-    user: {
-      avatar: "./assets/images/user-2.jpg",
-      name: "Cameron Williamson",
-    },
-    title: "12 Things to know before buying a house",
-    description:
-      "Want to buy a house but are unsure about what we should know, here I will try to explain what we should know and check when we want to buy a house",
-    readTime: "8",
-    date: "27 Apr 2021",
-  };
+  let articles = await fetchArticles();
+  let mainArticle = await fetchMainArticle();
 
   //FUNCTIONS
+  async function fetchArticles() {
+    try {
+      const response = await fetch("http://localhost:3000/articles");
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  }
+
+  async function fetchMainArticle() {
+    try {
+      const response = await fetch(
+        "http://localhost:3000/articles/mainArticle"
+      );
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  }
+
   function renderArticlesMarkup(articlesMarkup) {
     articlesContainer.innerHTML += articlesMarkup;
   }
@@ -78,13 +55,13 @@ export default function articles() {
       let template = `
       <div class="mini-article">
         <div class="mini-article__img-container">
-            <img src="${article.imageUrl}" alt="article ${idx}" />
+            <img src="http://localhost:8080${article.imageUrl}" alt="article ${idx}" />
         </div>
 
         <div class="mini-article__info">
             <div class="mini-article__info__user">
                 <div class="mini-article__info__user__img-container">
-                    <img src="${article.user.avatar}" alt="" />
+                    <img src="http://localhost:8080${article.user.avatar}" alt="" />
                 </div>
 
                 <p class="label-text-regular">${article.user.name}</p>
@@ -116,12 +93,12 @@ export default function articles() {
     let template = `
       <div class="article">
       <div class="article__img-container">
-        <img src="${article.imageUrl}" alt="main article img" />
+        <img src="http://localhost:8080${article.imageUrl}" alt="main article img" />
       </div>
 
       <div class="mini-article__info__user">
         <div class="mini-article__info__user__img-container">
-          <img src="${article.user.avatar}" alt="main article user img" />
+          <img src="http://localhost:8080${article.user.avatar}" alt="main article user img" />
         </div>
 
         <p class="label-text-regular">${article.user.name}</p>
