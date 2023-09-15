@@ -1,4 +1,4 @@
-export default function featuredCards() {
+export default async function featuredCards() {
   const featuredButtons = document.querySelectorAll(".featured-button");
   const container = document.querySelector(".featured__cards");
   const leftButton = document.querySelector(
@@ -8,110 +8,22 @@ export default function featuredCards() {
     ".featured__arrow-buttons-container"
   ).lastElementChild;
 
-  const houses = [
-    {
-      image: "./assets/images/house-1.jpg",
-      title: "Roselands House",
-      price: "$ 35.000.000",
-      user: {
-        avatar: "../../assets/images/user-5.jpg",
-        name: "Dianne Russell",
-        location: "Manchester, Kentucky",
-      },
-      type: "popular",
-      propertyType: "Villa",
-    },
+  async function fetchFeaturedCards() {
+    try {
+      const response = await fetch(
+        "http://localhost:3000/featured/featuredCards"
+      ); // Replace with your API endpoint
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  }
 
-    {
-      image: "./assets/images/house-2.jpg",
-      title: "Woodlandside",
-      price: "$ 20.000.000",
-      user: {
-        avatar: "../../assets/images/user-6.jpg",
-        name: "Robert Fox",
-        location: "Dr. San Jose, South Dakota",
-      },
-      type: "new",
-      propertyType: "House",
-    },
-    {
-      image: "./assets/images/house-2.jpg",
-      title: "Woodlandside",
-      price: "$ 20.000.000",
-      user: {
-        avatar: "../../assets/images/user-6.jpg",
-        name: "Robert Fox",
-        location: "Dr. San Jose, South Dakota",
-      },
-      type: "new",
-      propertyType: "House",
-    },
-
-    {
-      image: "./assets/images/house-3.jpg",
-      title: "The Old Lighthouse",
-      price: "$ 44.000.000",
-      user: {
-        avatar: "../../assets/images/user-7.jpg",
-        name: "Ronald Richards",
-        location: "Santa Ana, Illinois",
-      },
-      type: "best",
-      propertyType: "Apartment",
-    },
-
-    {
-      image: "./assets/images/house-4.jpg",
-      title: "Cosmo's House",
-      price: "$ 22.000.000",
-      user: {
-        avatar: "../../assets/images/user-3.jpg",
-        name: "Jenny Wilson",
-        location: "Preston Rd. Inglewood, Maine 98380",
-      },
-      type: "popular",
-      propertyType: "House",
-    },
-
-    {
-      image: "./assets/images/house-5.jpg",
-      title: "Lake's House",
-      price: "$ 18.000.000",
-      user: {
-        avatar: "../../assets/images/user-1.jpg",
-        name: "Jenny Wilson",
-        location: "Preston Rd. Inglewood, Maine 98380",
-      },
-      type: "new",
-      propertyType: "House",
-    },
-
-    {
-      image: "./assets/images/house-6.jpg",
-      title: "Florida Villa",
-      price: "$ 54.000.000",
-      user: {
-        avatar: "../../assets/images/user-2.jpg",
-        name: "Jenny Wilson",
-        location: "Preston Rd. Inglewood, Maine 98380",
-      },
-      type: "best",
-      propertyType: "Villa",
-    },
-
-    {
-      image: "./assets/images/house-7.jpg",
-      title: "Colorado House",
-      price: "$ 21.000.000",
-      user: {
-        avatar: "../../assets/images/user-3.jpg",
-        name: "Jenny Wilson",
-        location: "Preston Rd. Inglewood, Maine 98380",
-      },
-      type: "popular",
-      propertyType: "Apartment",
-    },
-  ];
+  const houses = await fetchFeaturedCards();
 
   function allignCards() {
     const target = document.querySelector(".featured__container__subcontainer");
@@ -122,6 +34,7 @@ export default function featuredCards() {
   function renderMarkup(cardMarkup) {
     container.innerHTML += cardMarkup;
     allignCards();
+    addFavoriteButtonsHandlers();
   }
 
   function returnSVG(type) {
@@ -139,9 +52,17 @@ export default function featuredCards() {
   function generateMarkup(cards) {
     cards.forEach((card, idx) => {
       let template = `
-      <div class="featured-card">
+      <div class="featured-card" id="${card.id}">
             <div class="featured-card__img-container">
-              <img src="${card.image}" alt="house ${idx}">
+              <img src="http://127.0.0.1:8080/${card.image}" alt="house ${idx}">
+
+              <div class="heart-container ${
+                card.favorite ? "favorite-active" : ""
+              }">
+                <svg>
+                    <use href="./assets/svgs/sprite.svg#heart"></use>
+                </svg>
+              </div>
 
               <div class="sticker sticker--${card.type} label-text-medium">
                 <svg>
@@ -161,7 +82,9 @@ export default function featuredCards() {
 
               <div class="featured-card__user-container u-margin-top-small-2">
                 <div class="featured-card__user-container__img">
-                  <img src="${card.user.avatar}" alt="user ${
+                  <img src="http://127.0.0.1:8080/${
+                    card.user.avatar
+                  }" alt="user ${
         card.user.avatar[card.user.avatar.length - 1]
       }">
                 </div>
@@ -182,9 +105,12 @@ export default function featuredCards() {
 
   function filterHouses(houses, type = undefined) {
     if (type) {
-      let filteredHouses = houses.filter(
-        (house) => house.propertyType === type
-      );
+      let filteredHouses;
+      if (type === "Favorite") {
+        filteredHouses = houses.filter((house) => house.favorite);
+      } else {
+        filteredHouses = houses.filter((house) => house.propertyType === type);
+      }
       container.innerHTML = "";
       generateMarkup(filteredHouses);
     } else {
@@ -214,6 +140,33 @@ export default function featuredCards() {
       leftButton.classList.add("active-button");
       rightButton.classList.add("active-button");
     }
+  }
+
+  function changeFavorite(currentHouse) {
+    houses.forEach((house) => {
+      if (house.id === parseInt(currentHouse.id)) {
+        house.favorite = !house.favorite;
+        postFavoriteHouse(currentHouse.id);
+      }
+    });
+  }
+
+  async function postFavoriteHouse(id) {
+    fetch(`http://localhost:3000/featured/featuredCards/${id}`, {
+      method: "POST",
+    });
+  }
+
+  function addFavoriteButtonsHandlers() {
+    const favoriteButtons = document.querySelectorAll(".heart-container");
+    favoriteButtons.forEach((button, idx) => {
+      button.addEventListener("click", (e) => {
+        const buttonEl = e.target.closest(".heart-container");
+        const cardEl = e.target.closest(".featured-card");
+        buttonEl.classList.toggle("favorite-active");
+        changeFavorite(cardEl);
+      });
+    });
   }
 
   //EVENTS

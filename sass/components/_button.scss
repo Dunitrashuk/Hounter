@@ -58,6 +58,18 @@
       background-color: $color-primary-dark;
     }
   }
+
+  &--heart {
+    svg {
+      height: 2rem;
+      width: 2rem;
+      stroke: $color-primary-dark;
+    }
+
+    &:hover {
+      background-color: $color-primary-light;
+    }
+  }
 }
 
 .active {
@@ -67,5 +79,33 @@
 
   svg {
     fill: $color-primary;
+  }
+}
+
+.heart-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-white;
+  padding: 1rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  transition: all 0.2s;
+
+  svg {
+    height: 2.4rem;
+    width: 2.4rem;
+    stroke: $color-primary-dark;
+  }
+}
+
+.favorite-active {
+  background-color: rgb(222, 119, 119);
+
+  svg {
+    stroke: $color-white;
+    fill: $color-white;
   }
 }
